@@ -4,11 +4,11 @@ pipeline {
         stage('Checkout'){
             steps { checkout scm }
         }
-        stage('Install'){
+        stage('Build'){
             steps { sh 'docker build -t my-website .'}
         }
         stage('Run Container'){
-            steps { sh 'docker run -d -p 8080:80 my-website'}
+            steps { sh 'docker run -d -p 8082:80 my-website'}
         }
     }
 }
